@@ -14,7 +14,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model = tf.saved_model.load("model")
+model = tf.saved_model.load("/model")
 
 waste_labels = ["Sampah Organik Basah (LAYAK KOMPOS)", "Sampah Organik Kering (LAYAK KOMPOS)", "Sampah Tidak Layak Kompos"]
 
