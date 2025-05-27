@@ -15,7 +15,7 @@ app.add_middleware(
 )
 
 model = tf.saved_model.load("model")
-model_inference = model.signatures["saving_default"]
+model_inference = model.signatures["serving_default"]
 
 waste_labels = ["Sampah Organik Basah (LAYAK KOMPOS)", "Sampah Organik Kering (LAYAK KOMPOS)", "Sampah Tidak Layak Kompos"]
 
