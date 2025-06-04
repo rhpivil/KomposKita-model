@@ -39,7 +39,10 @@ async def predict(image: UploadFile = File(...)):
     confidence = float(np.max(prediction_values))
 
     return {
-        "predicted_class": predicted_class,
+      "success": "true",
+      "message": "Prediction is success",
+      "result": {
         "label": waste_labels[predicted_class],
-        "confidence": confidence,
+        "confidence": confidence
+      }
     }
