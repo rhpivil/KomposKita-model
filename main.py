@@ -8,7 +8,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Replace with GitHub Pages URL for production
+    allow_origins=["https://kompos-kita.vercel.app"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -29,7 +29,7 @@ def preprocess_image(image_bytes):
     return image_tensor
 
 
-@app.post("/predict")
+@app.post("/api/predicts")
 async def predict(image: UploadFile = File(...)):
     image_bytes = await image.read()
     image_tensor = preprocess_image(image_bytes)
